@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+    --color-chemical-50: #f0f9ff;
+    --color-chemical-100: #e0f2fe;
+    --color-chemical-200: #bae6fd;
+    --color-chemical-300: #7dd3fc;
+    --color-chemical-400: #38bdf8;
+    --color-chemical-500: #0ea5e9;
+    --color-chemical-600: #0284c7;
+    --color-chemical-700: #0369a1;
+    --color-chemical-800: #075985;
+    --color-chemical-900: #0c4a6e;
+}
+
+body {
+    /* v4 Recommended: Use standard classes on specific elements or @apply */
+    @apply bg-slate-50 text-slate-800 antialiased;
+}

@@ -1,0 +1,91 @@
+/* Main Window Background */
+QMainWindow {
+    background-color: #f8fafc; /* Slate-50 */
+}
+
+/* Labels */
+QLabel {
+    font-family: 'Segoe UI', sans-serif;
+    color: #1e293b; /* Slate-800 */
+}
+
+/* Headings */
+QLabel#Heading {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0f172a; /* Slate-900 */
+}
+
+QLabel#SubHeading {
+    font-size: 16px;
+    color: #64748b; /* Slate-500 */
+}
+
+/* Inputs */
+QLineEdit {
+    padding: 10px;
+    border: 1px solid #cbd5e1; /* Slate-300 */
+    border-radius: 6px;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+QLineEdit:focus {
+    border: 2px solid #0284c7; /* Chemical-600 */
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #0284c7; /* Chemical-600 */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color: #0369a1; /* Chemical-700 */
+}
+
+QPushButton#SecondaryButton {
+    background-color: #ffffff;
+    color: #475569; /* Slate-600 */
+    border: 1px solid #cbd5e1;
+}
+
+QPushButton#SecondaryButton:hover {
+    background-color: #f1f5f9; /* Slate-100 */
+}
+
+/* Cards */
+QFrame#Card {
+    background-color: #ffffff;
+    border: 1px solid #e2e8f0; /* Slate-200 */
+    border-radius: 12px;
+}
+
+/* Tabs */
+QTabWidget::pane {
+    border: 1px solid #e2e8f0;
+    background: white;
+    border-radius: 8px;
+}
+
+QTabBar::tab {
+    background: #f1f5f9;
+    color: #64748b;
+    padding: 10px 20px;
+    margin-right: 4px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+QTabBar::tab:selected {
+    background: white;
+    color: #0284c7;
+    border: 1px solid #e2e8f0;
+    border-bottom: none;
+    font-weight: bold;
+}
