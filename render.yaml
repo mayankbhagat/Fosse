@@ -1,0 +1,40 @@
+services:
+  # 1. Django Backend
+  - type: web
+    name: fosse-backend
+    runtime: python
+    region: singapore
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn config.wsgi:application"
+    root: backend
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.10.0
+      - key: SECRET_KEY
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
+    fileMounts:
+      - name: db_config
+        mountPath: /etc/secrets/db_config
+        content: |
+           # Placeholders if needed
+
+  # 2. React Frontend
+  - type: static
+    name: fosse-frontend
+    runtime: static
+    region: singapore
+    root: web-frontend
+    buildCommand: "npm install && npm run build"
+    publishDir: "dist"
+    routes:
+      - type: rewrite
+        source: "/*"
+        destination: "/index.html"
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: fosse-backend
+          envVar: RENDER_EXTERNAL_URL
